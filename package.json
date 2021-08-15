@@ -1,0 +1,17 @@
+{
+  "name": "back-end-web-development",
+  "version": "1.0.0",
+  "description": "Server Side Development With NodeJS, Express and MongoDB.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "keywords": [
+    "NodeJS",
+    "Express",
+    "MongoDB"
+  ],
+  "author": "NARENDRAN E",
+  "license": "ISC"
+}
