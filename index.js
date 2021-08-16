@@ -1,3 +1,5 @@
+// http://localhost:3000 
+
 const http=require('http');
 
 const hostname='localhost';
@@ -7,7 +9,7 @@ const server=http.createServer((req,res)=>{
     console.log(req.headers);
     res.statusCode=200;
     res.setHeader('Content-Type','text/html');
-    res.end(<html><body><h1>Hello Naren</h1></body></html>);
+    res.end('<html><body><h1>Hello Naren</h1></body></html>');
 })
 
 server.listen(port,hostname,()=>{
