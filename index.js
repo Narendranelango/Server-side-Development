@@ -4,6 +4,11 @@ const hostname='localhost';
 const port= 3000;
 
 const app=express();
+const morgan = require('morgan');
+app.use(morgan('dev'));
+
+app.use(express.static(__dirname + '/public'));//__dirname specifies 
+        //the name of the root directory which in this case is public 
 
 app.use((req,res,next)=>{
   console.log(req.headers);
