@@ -1,30 +1,30 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const dishRouter = express.Router();
+const dishIdRouter = express.Router();
 
-dishRouter.use(bodyParser.json());
+dishIdRouter.use(bodyParser.json());
 
 
 
-dishRouter.route('/')
+dishIdRouter.route('/')
 .all((req,res,next) => {        //app.get('/dishes', (req,res,next) => {(Previous One)
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     next();//Points to the next '/' , i.e. to the next path.
 })
 .get((req,res,next) => {
-    res.end('Dish Router Will send all the dishes to you!');
+    res.end('Will send details of the dish: ' + req.params.dishId +' to you!');
 })
 .post((req, res, next) => {
-    res.end('Will add the dish: ' + req.body.name + ' with details: ' + req.body.description);
+    res.end('POST operation not supported on /disheId/'+ req.params.dishId);
 })
 .put((req, res, next) => {
     res.statusCode = 403;
-    res.end('PUT operation not supported on /dishes');
+    res.end('Dish ID PUT operation not supported on /disheId');
 })
 .delete((req, res, next) => {
-    res.end('Deleting all dishes');
+    res.end('Dish ID Deleting all dishes');
 });
 
-module.exports = dishRouter;
+module.exports = dishIdRouter;
