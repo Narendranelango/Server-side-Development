@@ -27,4 +27,18 @@ leadersRouter.route('/')
     res.end('Deleting all leaders');
 });
 
+leadersRouter.route('/:leadersId')
+.get((req,res,next) => {
+    res.end('Leaders information is added');
+})
+.post((req, res, next) => {
+    res.end('Leaders: ' + req.body.name + ' with details: ' + req.body.description);
+})
+.put((req, res, next) => {
+    res.statusCode = 403;
+    res.end('PUT operation not supported on /leaders');
+})
+.delete((req, res, next) => {
+    res.end('Deleting all leaders');
+});
 module.exports = leadersRouter;
